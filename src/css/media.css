@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 @media screen and (max-width: 1024px) {
   .footer .absolute__block {
     right: 55px;
@@ -151,6 +155,10 @@
   }
 }
 @media screen and (max-width: 650px) {
+  .range {
+    width: 400px !important;
+  }
+
   .request__form .parent {
     flex-direction: column;
   }
@@ -200,6 +208,10 @@
   }
 }
 @media screen and (max-width: 450px) {
+  .range {
+    width: 320px !important;
+  }
+
   .calculator {
     padding: 35px 15px !important;
   }
