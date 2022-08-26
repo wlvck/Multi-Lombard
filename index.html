@@ -79,8 +79,8 @@
                 <h1>Деньги под залог
                     золото и техники</h1>
                 <p>Первые 10 дней <span>без процентов</span></p>
-                <a class="link_to_" href="">Оставить заявку</a>
-                <a class="link_to_w" href="">Написать в WhatsApp</a>
+                <a class="link_to_" href="#email_send">Оставить заявку</a>
+                <a class="link_to_w" href="tel:+77020662888">Написать в WhatsApp</a>
             </div>
             <div class="d-flex align-items-center">
                 <div class="card">
@@ -146,25 +146,38 @@
             <button>Золото</button>
         </div>
         <div class="calculator__container">
-            <div class="title">Сумма кредита: <p>120 000</p> <span>тенге</span></div>
-            <div class="title">Срок кредита: <p>6</p> <span>дней</span></div>
+            <div class="title">Сумма кредита: <p id="sum_of_deb">120 000</p> <span>тенге</span></div>
+            <form class="range">
+                <div class="form-group range__slider">
+                    <input id="range1" type="range" step="500">
+                </div><!--/form-group-->
+            </form>
+            <div class="title form-group range__value">Срок кредита: <p id="deb_day">6</p>
+                <p>дней</p></div>
+            <form class="range">
+                <div class="form-group range__slider">
+                    <input id="range2" type="range" step="1">
+                </div><!--/form-group-->
+            </form>
             <div class="return__sum">
                 Сумма возврата <br>
-                <span>125 000</span>
+                <span id="total">125 000</span>
                 <span>тенге</span>
             </div>
             <div class="request__form">
-                <div class="parent d-flex align-items-center justify-content-between">
-                    <div class="form_block">
-                        <label for="type">Вид техники</label>
-                        <input id="type" placeholder="MacBook Air 13”" type="text">
+                <form method="post" id="request">
+                    <div class="parent d-flex align-items-center justify-content-between">
+                        <div class="form_block">
+                            <label for="type">Вид техники</label>
+                            <input id="type" placeholder="MacBook Air 13”" type="text">
+                        </div>
+                        <div class="form_block">
+                            <label for="phone">Ваш телефон</label>
+                            <input id="phone" placeholder="+7" type="text">
+                        </div>
                     </div>
-                    <div class="form_block">
-                        <label for="phone">Ваш телефон</label>
-                        <input id="phone" placeholder="+7" type="text">
-                    </div>
-                </div>
-                <button>Отправить заявку</button>
+                    <button type="submit">Отправить заявку</button>
+                </form>
             </div>
         </div>
     </div>
@@ -187,21 +200,23 @@
         </div>
     </div>
     <div class="consultation">
-        <div class="parent limit mx-auto d-flex align-items-end justify-content-between">
-            <div class="text">
-                Оставьте заявку и получите
-                бесплатную консультацию
+        <form method="post" id="email_send">
+            <div class="parent limit mx-auto d-flex align-items-end justify-content-between">
+                <div class="text">
+                    Оставьте заявку и получите
+                    бесплатную консультацию
+                </div>
+                <div class="form_input margin-bottom-20">
+                    <label for="full_name">Ваше имя</label>
+                    <input type="text" placeholder="Введите Ваше имя" id="full_name">
+                </div>
+                <div class="form_input">
+                    <label for="phoned">Ваш телефон</label>
+                    <input type="text" placeholder="+7" id="phoned">
+                </div>
+                <button type="submit">Отправить</button>
             </div>
-            <div class="form_input margin-bottom-20">
-                <label for="name">Ваше имя</label>
-                <input type="text" placeholder="Введите Ваше имя" id="name">
-            </div>
-            <div class="form_input">
-                <label for="phoned">Ваш телефон</label>
-                <input type="text" placeholder="+7" id="phoned">
-            </div>
-            <button type="submit">Отправить</button>
-        </div>
+        </form>
     </div>
     <div class="footer" id="contact">
         <div class="map">
@@ -209,7 +224,8 @@
                     href="https://yandex.kz/maps/162/almaty/?utm_medium=mapframe&utm_source=maps"
                     style="color:#eee;font-size:12px;position:absolute;top:0px;">Алматы</a><a
                     href="https://yandex.kz/maps/162/almaty/house/Y08Yfg5iTUUFQFppfX5zdXlmbA==/?ll=76.892401%2C43.224558&utm_medium=mapframe&utm_source=maps&z=17.11"
-                    style="color:#eee;font-size:12px;position:absolute;top:14px;">Улица Тимирязева, 74 — Яндекс Карты</a>
+                    style="color:#eee;font-size:12px;position:absolute;top:14px;">Улица Тимирязева, 74 —
+                Яндекс Карты</a>
                 <iframe src="https://yandex.kz/map-widget/v1/-/CCUR7RaVdC" width="100%" height="471" frameborder="1"
                         allowfullscreen="true" style="position:relative;"></iframe>
             </div>
@@ -249,5 +265,9 @@
         </div>
     </div>
 </div>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="./src/js/index.js"></script>
+<script src="./src/js/range.js"></script>
+<script src="src/js/initialize.js"></script>
 </body>
 </html>
